@@ -13,5 +13,5 @@ on:
       - main
 jobs:
   ci:
-    uses: kare/github/.github/workflows/go-pkg-ci.yaml@v0.1.0
+    uses: kare/github/.github/workflows/go-pkg-ci.yaml@v0.2.0
 ```
