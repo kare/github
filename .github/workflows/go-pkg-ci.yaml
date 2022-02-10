@@ -25,6 +25,7 @@ jobs:
       - uses: actions/setup-go@v2.2.0
         with:
           go-version: ${{ matrix.go-version }}
+          check-latest: true
       - name: Go build
         run: go build
       - name: Check source is Go fmted
