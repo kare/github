@@ -44,7 +44,7 @@ if output=$(git status --porcelain=v1) && test -n "$output"; then
 	exit 1
 fi
 
-git commit --allow-empty --message="chore: Release ${version}"
+git commit --allow-empty --message="release: Release ${version}"
 git push
 
 git tag --message="Release ${version}" --annotate "v${version}"
