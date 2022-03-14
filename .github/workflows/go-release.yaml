@@ -1,0 +1,17 @@
+---
+on:
+  workflow_call:
+    inputs:
+      version:
+        description: Semantic version tag of the release. For example "v0.9.1".
+        required: true
+        type: string
+      go_module_path:
+        description: Go module path. For example "github.com/octocat/go-project".
+        required: true
+        type: string
+jobs:
+  go-release:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl --verbose "https://sum.golang.org/lookup/${{ inputs.go_module_path }}@${{ inputs.version }}"
