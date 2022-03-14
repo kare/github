@@ -18,7 +18,6 @@ jobs:
           sudo ip addr show
           echo "ifconfig:"
           ifconfig
-          echo "ip address add 10.200.10.1:"
           echo "sudo ip address add 10.200.10.1 dev lo label lo:1"
           sudo ip address add 10.200.10.1 dev lo label lo:1
           echo "return value: $?"
@@ -27,5 +26,5 @@ jobs:
           echo "ifconfig:"
           ifconfig
           echo "env:"
-          env
+          env | sort
           echo "pwd: $(pwd)"
