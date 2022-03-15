@@ -34,6 +34,7 @@ jobs:
           flavor: |
             latest=auto
           tags: |
+            type=sha
             type=ref,event=pr
             type=semver,pattern={{raw}}
             type=semver,pattern={{version}}
