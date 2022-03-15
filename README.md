@@ -13,7 +13,7 @@ on:
       - main
 jobs:
   ci:
-    uses: kare/github/.github/workflows/go-pkg-ci.yaml@v0.2.4
+    uses: kare/github/.github/workflows/go-pkg-ci.yaml@v0.3.0
 ```
 
 ## Development
