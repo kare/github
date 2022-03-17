@@ -1,23 +1,6 @@
 ---
 on:
   workflow_call:
-    inputs:
-      repository_owner:
-        description: 'Username of the GitHub repository owner. For Example value of `github.repository_owner` variable or "octocat".'
-        required: true
-        type: string
-      repository:
-        description: 'Path of the GitHub repository. For example value of "github.repository" variable or "octocat/reponame".'
-        required: true
-        type: string
-      ref:
-        description: 'GitHub ref. For example value of "github.ref" variable.'
-        required: true
-        type: string
-      actor:
-        description: 'GitHub actor. For example value of "github.actor" variable.'
-        required: true
-        type: string
     secrets:
       token:
         description: 'GitHub token. For example value of "secrets.GITHUB_TOKEN" variable.'
