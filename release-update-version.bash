@@ -28,4 +28,4 @@ fi
 
 sed -i '' -e 's#^    uses: kare/github/\.github/workflows/go-pkg-ci\.yaml@v.*$#    uses: kare/github/.github/workflows/go-pkg-ci.yaml@v'"$version"'#g' README.md
 git add README.md
-git commit --message="docs: update version in README.md"
+git commit --message="docs: update example version to $version in README.md"
