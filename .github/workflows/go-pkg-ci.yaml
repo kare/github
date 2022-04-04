@@ -40,7 +40,7 @@ jobs:
       - name: Check source is Go fmt simplified
         run: diff -u <(echo -n) <(gofmt -s -d ./)
       - name: Run staticcheck
-        uses: dominikh/staticcheck-action@v1.1.0
+        uses: dominikh/staticcheck-action@v1.2.0
         with:
           version: master
           install-go: false
