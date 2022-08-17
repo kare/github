@@ -12,6 +12,7 @@ on:
         type: string
 jobs:
   go-release:
+    name: Update Go Module Index
     runs-on: ubuntu-latest
     steps:
       - run: curl --verbose "https://sum.golang.org/lookup/${{ inputs.go_module_path }}@${{ inputs.version }}"
