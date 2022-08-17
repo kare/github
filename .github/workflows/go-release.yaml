@@ -15,4 +15,4 @@ jobs:
     name: Update Go Module Index
     runs-on: ubuntu-latest
     steps:
-      - run: curl "https://sum.golang.org/lookup/${{ inputs.go_module_path }}@${{ inputs.version }}"
+      - run: curl --silent --show-error "https://sum.golang.org/lookup/${{ inputs.go_module_path }}@${{ inputs.version }}"
