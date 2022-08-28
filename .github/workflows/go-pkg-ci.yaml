@@ -9,6 +9,11 @@ jobs:
     continue-on-error: true
     strategy:
       matrix:
+        goos:
+          - darwin
+          - linux
+        goarch:
+          - amd64
         go-version:
           - 1.18.x
           - 1.19.x
@@ -29,7 +34,7 @@ jobs:
           go-version: ${{ matrix.go-version }}
           check-latest: true
       - name: Go build
-        run: go build
+        run: GOOS=${{ matrix.goos }} GOARCH=${{ matrix.goarch }} go build
       - name: Check source is Go fmted
         run: diff -u <(echo -n) <(gofmt -d ./)
       - name: Check source is Go fmt simplified
