@@ -1,0 +1,33 @@
+---
+#
+# https://yamllint.readthedocs.io/en/stable/configuration.html
+#
+extends: default
+rules:
+  braces:
+    forbid: true
+  brackets:
+    max-spaces-inside: 1
+    level: error
+  colons:
+    max-spaces-after: -1
+    level: error
+  commas:
+    max-spaces-after: -1
+    level: error
+  empty-lines:
+    max: 3
+    level: error
+  new-lines:
+    type: unix
+  new-line-at-end-of-file: disable
+  hyphens:
+    max-spaces-after: 1
+  trailing-spaces:
+    level: error
+  line-length: disable
+  comments:
+    require-starting-space: false
+    ignore-shebangs: false
+    min-spaces-from-content: 1
+  truthy: disable
