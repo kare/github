@@ -2,9 +2,9 @@
 on:
   workflow_call:
 jobs:
-  docker:
-    name: Build
-    runs-on: ubuntu-20.04
+  docker-build:
+    name: Docker Build
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4.1.0
       - uses: docker/setup-buildx-action@v2.2.1
