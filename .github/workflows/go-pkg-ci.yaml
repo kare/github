@@ -34,7 +34,7 @@ jobs:
       - name: Run unit tests
         run: |
           coverage_file=$(mktemp -t unit-test-coverage-XXXXXXXXXX)
-          go test -v -coverprofile $coverage_file ./...
+          go test -coverprofile $coverage_file ./...
           go tool cover -func $coverage_file
           go tool cover -html $coverage_file -o unit-test-coverage.html
       - name: Upload unit test coverage report
@@ -71,4 +71,4 @@ jobs:
       - name: Check running go mod tidy doesn't generate changes
         run: diff -u <(go mod tidy -v) <(echo -n)
       - name: Check running go generate doesn't generate changes
-        run: diff -u <(go generate) <(git diff)
+        run: diff -u <(go generate ./...) <(git diff)
