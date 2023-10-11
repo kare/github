@@ -21,7 +21,7 @@ jobs:
       - name: Go build
         run: |
           os=(darwin linux)
-          arch=(amd64)
+          arch=(amd64 arm64)
           for goos in "${os[@]}"
           do
             for goarch in "${arch[@]}"
