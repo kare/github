@@ -34,7 +34,7 @@ jobs:
       - name: Run unit tests
         run: |
           coverage_file=$(mktemp -t unit-test-coverage-XXXXXXXXXX)
-          go test -coverprofile $coverage_file ./...
+          go test -short -coverprofile $coverage_file ./...
           go tool cover -func $coverage_file
           go tool cover -html $coverage_file -o unit-test-coverage.html
       - name: Upload unit test coverage report
@@ -45,7 +45,7 @@ jobs:
       - name: Run integration tests
         run: |
           coverage_file=$(mktemp -t integration-test-coverage-XXXXXXXXXX)
-          go test -v -coverprofile $coverage_file -tags integration ./...
+          go test -coverprofile $coverage_file ./...
           go tool cover -func $coverage_file
           go tool cover -html $coverage_file -o integration-test-coverage.html
       - name: Upload integration test coverage report
