@@ -1,6 +1,11 @@
 ---
 on:
   workflow_call:
+    inputs:
+      staticcheckversion:
+        description: Staticcheck version.
+        type: string
+        required: true
 jobs:
   build:
     name: Build
@@ -61,7 +66,7 @@ jobs:
       - name: Run staticcheck
         uses: dominikh/staticcheck-action@v1.3.1
         with:
-          version: 2023.1.4
+          version: ${{ inputs.staticcheckversion }}
           install-go: false
       - name: Check source is go fmted
         run: diff -u <(gofmt -d ./) <(echo -n)
