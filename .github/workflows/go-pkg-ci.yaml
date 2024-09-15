@@ -17,6 +17,14 @@ jobs:
           - ubuntu-latest
     steps:
       - uses: actions/checkout@v4.1.7
+      - uses: actions/cache@v4.0.2
+        with:
+          path: |
+            ~/.cache/go-build
+            ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
       - uses: actions/setup-go@v5.0.2
         with:
           go-version-file: go.mod
