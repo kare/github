@@ -50,7 +50,7 @@ jobs:
           go tool cover -func $coverage_file
           go tool cover -html $coverage_file -o unit-test-coverage.html
       - name: Upload unit test coverage report
-        uses: actions/upload-artifact@v4.4.0
+        uses: actions/upload-artifact@v4.4.1
         with:
           name: unit-test-coverage
           path: unit-test-coverage.html
@@ -61,7 +61,7 @@ jobs:
           go tool cover -func $coverage_file
           go tool cover -html $coverage_file -o integration-test-coverage.html
       - name: Upload integration test coverage report
-        uses: actions/upload-artifact@v4.4.0
+        uses: actions/upload-artifact@v4.4.1
         with:
           name: integration-test-coverage
           path: integration-test-coverage.html
