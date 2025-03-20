@@ -25,7 +25,7 @@ jobs:
           key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
           restore-keys: |
             ${{ runner.os }}-go-
-      - uses: actions/setup-go@v5.3.0
+      - uses: actions/setup-go@v5.4.0
         with:
           go-version-file: go.mod
           check-latest: true
